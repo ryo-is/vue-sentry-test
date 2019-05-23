@@ -1,18 +1,16 @@
-<template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
-  </div>
+<template lang="pug">
+  .home
+    h1.title Hello Vue.js!!
+    el-button(@click="test()") Click Here!!
 </template>
 
 <script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
-import HelloWorld from "@/components/HelloWorld.vue"; // @ is an alias to /src
+import { Component, Vue } from "vue-property-decorator"
 
-@Component({
-  components: {
-    HelloWorld,
-  },
-})
-export default class Home extends Vue {}
+@Component({})
+export default class Home extends Vue {
+  public test() {
+    (document.querySelector(".hoge") as Element).append("test")
+  }
+}
 </script>
